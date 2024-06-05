@@ -1,4 +1,3 @@
-import { View, Image } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
   useAnimatedStyle,
@@ -21,6 +20,7 @@ export default function EmojiSticker({ imageSize, stickerSource }) {
     translateX.value += event.changeX;
     translateY.value += event.changeY;
   });
+  //@ts-ignore
   const containerStyle = useAnimatedStyle(() => {
     return {
       transform: [
