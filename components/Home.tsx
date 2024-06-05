@@ -127,7 +127,7 @@ export default function Home({ navigation }) {
       )}
       <Button
         label="Use this photo"
-        onPress={() => navigation.navigate("Details")}
+        onPress={() => navigation.navigate("Login")}
       />
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />

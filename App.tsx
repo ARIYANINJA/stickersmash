@@ -2,7 +2,9 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Provider } from "jotai";
 import Home from "./components/Home";
+import Login from "./components/Login";
 import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
@@ -15,25 +17,36 @@ export default function App() {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      primary: "tomato",
-      secondary: "#25292e",
+      background: "#fff",
+      error: "#FF5435",
+      primary: "#87C240",
+      text: "#21136F",
+      accent: "#DDA372",
     },
   };
+
   return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <GestureHandlerRootView>
-          <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Details" component={Details} />
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              options={{ title: "StickerSmasher" }}
-            />
-          </Stack.Navigator>
-          <StatusBar style="auto" />
-        </GestureHandlerRootView>
-      </NavigationContainer>
-    </PaperProvider>
+    <Provider>
+      <PaperProvider theme={theme}>
+        <NavigationContainer>
+          <GestureHandlerRootView>
+            <Stack.Navigator initialRouteName="Home">
+              <Stack.Screen name="Details" component={Details} />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Login"
+                component={Login}
+              />
+              <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{ title: "StickerSmasher" }}
+              />
+            </Stack.Navigator>
+            <StatusBar style="auto" />
+          </GestureHandlerRootView>
+        </NavigationContainer>
+      </PaperProvider>
+    </Provider>
   );
 }

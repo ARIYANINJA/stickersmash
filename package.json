@@ -9,17 +9,22 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@aravt-tech/auth": "^1.0.1",
+    "@aravt-tech/swr": "^1.1.1",
     "@expo/metro-runtime": "~3.2.1",
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
+    "@types/react": "~18.2.79",
     "dom-to-image": "^2.6.0",
     "expo": "~51.0.9",
     "expo-image-picker": "~15.0.5",
     "expo-media-library": "~16.0.3",
     "expo-status-bar": "~1.12.1",
+    "jotai": "^2.8.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.51.5",
     "react-native": "0.74.1",
     "react-native-gesture-handler": "~2.16.1",
     "react-native-paper": "^5.12.3",
@@ -30,8 +35,7 @@
     "react-native-view-shot": "3.8.0",
     "react-native-web": "~0.19.10",
     "react-navigation": "^5.0.0",
-    "typescript": "~5.3.3",
-    "@types/react": "~18.2.79"
+    "typescript": "~5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
