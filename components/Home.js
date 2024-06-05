@@ -11,10 +11,12 @@ import EmojiSticker from "./EmojiSticker";
 import * as MediaLibrary from "expo-media-library";
 import domtoimage from "dom-to-image";
 import { captureRef } from "react-native-view-shot";
+import { useTheme, MD2Colors, ActivityIndicator } from "react-native-paper";
 const PlaceholderImage = require("../assets/images/background-image.png");
 
 export default function Home({ navigation }) {
   const imageRef = useRef();
+  const theme = useTheme();
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAppOptions, setShowAppOptions] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -82,7 +84,10 @@ export default function Home({ navigation }) {
     }
   };
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, { backgroundColor: theme.colors.secondary }]}
+    >
+      <ActivityIndicator animating={true} color={theme.colors.primary} />
       <View style={styles.imageContainer}>
         <View ref={imageRef} collapsable={false}>
           <ImageViewer
@@ -134,7 +139,6 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
     alignItems: "center",
   },
   imageContainer: {
